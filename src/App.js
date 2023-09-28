@@ -1,22 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import ListWidthIndex from './components/ListWidthIndex';
+import ListWithId from './components/ListWithId';
+// import FormCurdWithStaticData from './oldtodo/FormCurdWithStaticData';
+// import TodoList from './oldtodo/TodoList';
+// import TodoListWithId from './oldtodo/TodoListWithId';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* <ListWithId /> */}
+        <ListWidthIndex />
+      {/* <TodoList /> */}
+      {/* <TodoListWithId /> */}
+      {/* <FormCurdWithStaticData /> */}
       </header>
     </div>
   );
