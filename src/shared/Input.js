@@ -1,18 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Input = ({type, onChange, defaultValue, placeholder}) => {
+const Input = ({type, onChange, defaultValue, }) => {
   const [value, setValue] = useState("")
   const onClickHandler = (e) => {
       setValue(e.target.value);
       onChange(e.target.value);
-      // setValue('');
   }
+
+  // useEffect(()=>{
+  //   setValue(defaultValue)
+  // },[defaultValue])
+
   console.log(value);
   return (
     <div>
       <input
         type={type}
-        placeholder={placeholder}
         value={value}
         onChange={onClickHandler}
       />
