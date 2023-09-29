@@ -1,21 +1,24 @@
+import { useState } from 'react';
 import './App.css';
-import ListWidthIndex from './components/ListWidthIndex';
-import ListWithId from './components/ListWithId';
-import UserCrud from './components/user-crud/Index';
-// import FormCurdWithStaticData from './oldtodo/FormCurdWithStaticData';
-// import TodoList from './oldtodo/TodoList';
-// import TodoListWithId from './oldtodo/TodoListWithId';
+import UserInput from './components/UserInput';
+
 
 function App() {
+
+  const [getValue, setGetValue] = useState('')
+  const changeValue = (val) => {
+    setGetValue(val)
+  }
+
+  const clear=(e)=>{
+    setGetValue('')
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        {/* <ListWithId /> */}
-        {/* <ListWidthIndex /> */}
-        <UserCrud />
-      {/* <TodoList /> */}
-      {/* <TodoListWithId /> */}
-      {/* <FormCurdWithStaticData /> */}
+        <UserInput changeValue={changeValue} clear={clear} />
+        <h2>{getValue}</h2>
       </header>
     </div>
   );
