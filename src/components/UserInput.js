@@ -3,7 +3,7 @@ import Button from '../shared/Button';
 import Input from '../shared/Input';
 
 
-const UserInput = ({ changeValue, secondChangeValue, clear }) => {
+const UserInput = ({ changeValue, secondChangeValue, clear1, clear2 }) => {
   const [userInput, setUserInput] = useState("");
   const [lastName, setLastName] = useState("");
 
@@ -11,16 +11,19 @@ const UserInput = ({ changeValue, secondChangeValue, clear }) => {
     setUserInput(e.target.value)
     changeValue(e.target.value)
   }
-const onChangeSecondName=(e)=>{
-  setLastName(e.target.value)
-  secondChangeValue(e.target.value)
+  const onChangeSecondName = (e) => {
+    setLastName(e.target.value)
+    secondChangeValue(e.target.value)
 
-}
+  }
 
-  const onClear = () => {
+  const onClear1 = () => {
     setUserInput("");
-    setLastName("")
-    clear()
+    clear1();
+  }
+  const onClear2=()=>{
+    setLastName('')
+    clear2()
   }
   console.log(userInput);
   return (
@@ -31,13 +34,15 @@ const onChangeSecondName=(e)=>{
         value={userInput}
         onChange={onChangeHandler}
       />
+      <Button onClear={onClear1} />
+      <br></br>
       <label>Last Name</label>
       <Input
-      type={'text'}
-      value={lastName}
-      onChange={onChangeSecondName}
+        type={'text'}
+        value={lastName}
+        onChange={onChangeSecondName}
       />
-      <Button onClear={onClear} />
+      <Button onClear={onClear2} />
     </div>
   )
 }

@@ -11,8 +11,11 @@ function App() {
     setGetValue(val)
   }
 
-  const clear=(e)=>{
+  const clear1=(e)=>{
     setGetValue('')
+  }
+
+  const onClear2=(e)=>{
     setGetLastValue('')
   }
   const secondChangeValue=(val)=>{
@@ -25,7 +28,9 @@ function App() {
         <UserInput 
         changeValue={changeValue} 
         secondChangeValue={secondChangeValue}
-        clear={clear} />
+        clear1={clear1}
+        clear2={onClear2}
+         />
         <h2>{getValue} {getLastValue}</h2>
       </header>
     </div>
