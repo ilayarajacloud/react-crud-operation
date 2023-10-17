@@ -1,10 +1,10 @@
 import React from 'react'
-import ReviewSeturp from './component/ReviewSeturp'
+import Todo from './component/todo'
 
 const App = () => {
   return (
     <div>
-      <ReviewSeturp />
+      <Todo />
     </div>
   )
 }
