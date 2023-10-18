@@ -1,10 +1,10 @@
 import React from 'react'
-import Todo from './component/todo'
+import Crud from './component/crud'
 
 const App = () => {
   return (
     <div>
-      <Todo />
+      <Crud />
     </div>
   )
 }
