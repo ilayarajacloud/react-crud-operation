@@ -1,10 +1,10 @@
 import React from 'react'
-import Crud from './component/crud'
+import Accordian from './component/Accordian'
 
 const App = () => {
   return (
     <div>
-      <Crud />
+      <Accordian />
     </div>
   )
 }
