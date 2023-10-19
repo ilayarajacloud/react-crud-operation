@@ -10,7 +10,22 @@ const Crud = () => {
 
   const [studentList, setStudentList] = useState(studentInformation);
   const [updateStudent, setUpdateStudent] = useState({})
+  const [filterData, setFilterData] = useState('');
   console.log(studentList);
+
+  const findSearch = (e) => {
+    const { value } = e.target
+    setFilterData(value);
+  }
+
+  const resultData = studentList.filter((item) =>
+    item.fname.toLowerCase().includes(filterData.toLowerCase())
+  )
+
+  // const resultData=studentList.filter((item)=>{
+  //   const search = filterData.toLowerCase();
+  //   return Object.values(item).some((value)=> value.toLowerCase().includes(search));
+  // })
 
   const addStudentList = (val) => {
     if (updateStudent.id) {
@@ -42,8 +57,8 @@ const Crud = () => {
   }
   return (
     <>
-      <Form addStudentList={addStudentList} updateStudent={updateStudent} />
-      <TableComponent data={studentList} deleteStudent={deleteStudent} editStudent={editStudent} />
+      <Form addStudentList={addStudentList} updateStudent={updateStudent} findSearch={findSearch} />
+      <TableComponent data={resultData} deleteStudent={deleteStudent} editStudent={editStudent} />
     </>
   )
 }
