@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Form = ({ addStudentList, updateStudent, findSearch }) => {
+const Form = ({ addStudentList, updateStudent }) => {
   const initialState = { id: null, fname: '', lname: '', email: '', age: '' }
   const [userInput, setUserInput] = useState(initialState);
 
@@ -21,9 +21,7 @@ const Form = ({ addStudentList, updateStudent, findSearch }) => {
   }
   console.log(userInput);
 
-  const searchInput=(e)=>{
-    findSearch(e)
-  }
+  
 
   return (
     <>
@@ -60,9 +58,7 @@ const Form = ({ addStudentList, updateStudent, findSearch }) => {
           onChange={handleChange}
         />
         <button onClick={addFormData}>Submit</button>
-      </form>
-
-      <input type='search' placeholder='search' onChange={searchInput}/>
+     </form>
     </>
   )
 }

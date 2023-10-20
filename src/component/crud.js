@@ -11,15 +11,34 @@ const Crud = () => {
   const [studentList, setStudentList] = useState(studentInformation);
   const [updateStudent, setUpdateStudent] = useState({})
   const [filterData, setFilterData] = useState('');
+  const [filterGmail, setFilterGmail] = useState('');
+  const [filterLastName, setFilterLastName] = useState("");
+  const [filterAge, setFilterAge] = useState('');
+
   console.log(studentList);
 
   const findSearch = (e) => {
     const { value } = e.target
     setFilterData(value);
+  } 
+
+  const findGmail=(e)=>{
+    setFilterGmail(e.target.value)
   }
+
+  const findLastName=(e)=>{
+    setFilterLastName(e.target.value)
+  }
+  const findAge=(e)=>{
+    setFilterAge(e.target.value)
+  }
+  console.log(filterAge);
 
   const resultData = studentList.filter((item) =>
     item.fname.toLowerCase().includes(filterData.toLowerCase())
+     && item.email.toLowerCase().includes(filterGmail.toLowerCase())
+     && item.lname.toLowerCase().includes(filterLastName.toLowerCase())
+     && item.age.toLocaleUpperCase().includes(filterAge.toLowerCase())
   )
 
   // const resultData=studentList.filter((item)=>{
@@ -57,8 +76,8 @@ const Crud = () => {
   }
   return (
     <>
-      <Form addStudentList={addStudentList} updateStudent={updateStudent} findSearch={findSearch} />
-      <TableComponent data={resultData} deleteStudent={deleteStudent} editStudent={editStudent} />
+      <Form addStudentList={addStudentList} updateStudent={updateStudent} />
+      <TableComponent data={resultData} deleteStudent={deleteStudent} editStudent={editStudent} findSearch={findSearch} findGmail={findGmail} findLastName={findLastName} findAge={findAge}/>
     </>
   )
 }
