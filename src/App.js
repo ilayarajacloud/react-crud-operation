@@ -1,10 +1,10 @@
 import React from 'react'
-import Crud from './component/crud'
+import MenuDisplay from './component/MenuDisplay'
 
 const App = () => {
   return (
     <div>
-      <Crud />
+      <MenuDisplay />
     </div>
   )
 }
