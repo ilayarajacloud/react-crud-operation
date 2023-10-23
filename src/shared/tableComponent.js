@@ -1,6 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react';
+import './table.css';
 
-const TableComponent = ({ data, deleteStudent, editStudent,  findSearch, findGmail, findLastName, findAge }) => {
+const TableComponent = ({ data, deleteStudent, editStudent, findSearch, findGmail, findLastName, findAge }) => {
+  const [orderBy, setOrderBy] = useState("ASC");
+  const [datas, setData]=useState(data);
+
+  const shorting = (col) => {
+    if(orderBy==="ASC"){
+      const sorted = [...datas].sort((a,b)=>
+      a[col] > b[col] ? 1: -1
+      )
+      setOrderBy("DES")
+      setData(sorted)
+    }else{
+      const sorted = [...datas].sort((a,b)=>
+      a[col] < b[col] ? 1: -1
+      )
+      setOrderBy("ASC")
+      setData(sorted)
+    }
+    
+  }
+
   console.log(data);
 
   const onDelete = (id) => {
@@ -22,9 +43,14 @@ const TableComponent = ({ data, deleteStudent, editStudent,  findSearch, findGma
     findLastName(e)
   }
 
-  const searchAge =(e)=>{
+  const searchAge = (e) => {
     findAge(e)
   }
+
+  const applayingShort = (a, b) => {
+
+  }
+
   return (
     <>
 
@@ -40,22 +66,22 @@ const TableComponent = ({ data, deleteStudent, editStudent,  findSearch, findGma
       <label>Age Filter</label>
       <input type='text' onChange={searchAge} />
 
-      <table style={{ border: 2 }}>
+      <table className='table'>
         <thead>
           <tr>
-
-            <td>S.No</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Email</td>
-            <td>Age</td>
+            <th onClick={()=>shorting('id')}>S.No</th>
+            <th onClick={() => shorting('name')}> First Name</th>
+            <th onClick={()=>shorting('lname')}>Last Name</th>
+            <th onClick={()=>shorting('email')}>Email</th>
+            <th onClick={()=>shorting('age')}>Age</th>
+            <th>Action</th>
           </tr>
 
         </thead>
         <tbody>
           {
-            data.length > 0 ? (
-              data.map((item, index) => (
+            datas.length > 0 ? (
+              datas.map((item, index) => (
                 <tr key={item.id}>
                   <td>{index + 1}</td>
                   <td>{item.fname}</td>
