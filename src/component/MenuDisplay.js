@@ -5,6 +5,7 @@ import Categeories from '../shared/Categeories';
 
 const allCategory = ['all', ...new Set(item.map((item)=>item.category))]
 console.log(allCategory);
+console.log(item);
 
 const MenuDisplay = () => {
   const [menuItem, setMenueItem] = useState(item);
@@ -26,7 +27,7 @@ const MenuDisplay = () => {
           <h2>Our Menu</h2>
           <div className='underline'></div>
         </div>
-        <Categeories categeories={categeories} filterItem={filterItem}/>
+        <Categeories categeories={categeories } filterItem={filterItem}/>
         <Menu menuItem={menuItem} />
       </section>
     </main>
