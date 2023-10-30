@@ -3,7 +3,9 @@ import Form from '../shared/form'
 import TableComponent from '../shared/tableComponent';
 const studentInformation = [
   { id: 1, fname: 'ilaya', lname: 'raja', email: 'ilaya@gmail.com', age: '29' },
-  { id: 2, fname: 'jancy', lname: 'rani', email: 'thanya@gmail.com', age: '29' },
+  { id: 2, fname: 'jancy', lname: 'rani', email: 'thanya@gmail.com', age: '25' },
+  { id: 3, fname: 'hema', lname: 'rani', email: 'thanya3@gmail.com', age: '24' },
+  { id: 4, fname: 'kalki', lname: 'rani', email: 'thanya2@gmail.com', age: '23' },
 ]
 const Crud = () => {
 

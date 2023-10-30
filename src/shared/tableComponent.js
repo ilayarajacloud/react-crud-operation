@@ -5,6 +5,19 @@ const TableComponent = ({ data, deleteStudent, editStudent, findSearch, findGmai
   const [orderBy, setOrderBy] = useState("ASC");
   const [datas, setData]=useState(data);
 
+  // const shorting=()=>{
+  //   debugger;
+  //   if(orderBy==="ASC"){
+  //     const sorted=[...datas].sort((a,b)=>
+  //     a.name > b.name ? 1 : -1
+  //     )
+  //     setOrderBy("DES");
+  //     setData(sorted)
+  //   }else{
+
+  //   }
+  // }
+
   const shorting = (col) => {
     if(orderBy==="ASC"){
       const sorted = [...datas].sort((a,b)=>
