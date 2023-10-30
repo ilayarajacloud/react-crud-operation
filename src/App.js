@@ -1,10 +1,11 @@
 import React from 'react'
-import Crud from './component/crud'
+import Tabs from './component/Tabs'
 
 const App = () => {
+  
   return (
     <div>
-      <Crud />
+      <Tabs />
     </div>
   )
 }
