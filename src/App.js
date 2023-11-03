@@ -1,12 +1,14 @@
 import React from 'react'
-import Crud from './component/crud'
+import Navbar from './component/Navbar';
+import SideBar from './component/SideBar';
 
 const App = () => {
   return (
     <div>
-      <Crud />
+      <Navbar />
+      <SideBar />
     </div>
   )
 }
 
-export default App
+export default App;
